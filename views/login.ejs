@@ -1,0 +1,36 @@
+<%- include("header") -%>
+<body>
+<%- include("navbar") -%>
+
+    <div class="login-container">
+        <div class="mb-20">
+            <img class="w-full h-96" src="/Lobby.png" alt="">
+        </div>
+        <div class="w-full mb-80">
+            <div class="mx-auto flex flex-col md:flex-row shadow-xl" style="width: 60%;">
+                <div class="flex flex-col justify-center p-16 w-full md:w-1/2">
+                    <h1 class="login-text mb-16 uppercase text-2xl md:text-3xl lg:text-5xl">
+                        Login
+                    </h1>
+                    <form class="login-form flex flex-col items-start" action="">
+                        <input class="w-full p-3.5 filter drop-shadow-md" style="font-size: 14px;" type="email" name="" id="" placeholder="Registered email"/>
+                        <button class="p-2.5 px-8 mt-8 text-white" style="background-color: #043232;">Login</button>
+                    </form>
+                </div>
+                <div class="flex flex-col justify-center w-full md:w-1/2 p-16" style="background-color: #043232; color: white;">
+                    <h1 class="event-details-text mb-16 md:mb-32 uppercase text-2xl lg:text-4xl">
+                        Event Details
+                    </h1>
+                    <div class="text-sm md:text-xl xl:text-2xl grid grid-rows-2 grid-cols-2 grid-flow-col gap-4">
+                        <div class="row-start-1 col-start-1 col-span-1">Event Name</div>
+                        <div class="row-start-1 col-start-2 col-span-1">International Conference on Computational Intelligence, Cyber Security and Computational Models</div>
+                        <div class="row-start-2 col-start-1 col-span-1">Date</div>
+                        <div class="row-start-2 col-start-2 col-span-1">16 - 18th December</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
