@@ -31,6 +31,9 @@ app.get("/information", function(req, res){
   res.render("infoCenter");
 });
 
+app.get("/login", function(req, res){
+  res.render("login");
+});
 
 
 app.listen(process.env.PORT || 3000, function() {

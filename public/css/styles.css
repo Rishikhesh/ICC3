@@ -51,8 +51,33 @@
 }
 
 
+.login-text, .event-details-text {
+	position: relative;
+}
 
+.login-text::before, .event-details-text::before {
 
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	content: '';
+	display: block;
+	width: 10%;
+	height: 4px;
+	background-color: #043232;
+
+}
+
+.event-details-text::before {
+	background-color: white;
+	height: 2px;
+	bottom: -5px;
+}
+
+.login-form input:focus {
+	outline: none;
+	box-shadow: 0 0 0 1px #043232;
+}
 
 /* .container-a {
 	position: static;
