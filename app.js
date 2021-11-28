@@ -19,11 +19,11 @@ app.get("/conferencehall", function(req, res){
   res.render("conferenceHall");
 });
 
-app.get("/conferenceLobby", function(req, res){
-  res.render("conferenceLobby");
+app.get("/eventSponsor", function(req, res){
+  res.render("eventSponsor");
 });
 
-app.get("/networkCenter", function(req, res){
+app.get("/chat", function(req, res){
   res.render("networkCenter");
 });
 
