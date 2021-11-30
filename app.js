@@ -28,7 +28,7 @@ app.get("/chat", function(req, res){
 });
 
 app.get("/information", function(req, res){
-  res.render("infoCenter");
+  res.render("about");
 });
 
 
