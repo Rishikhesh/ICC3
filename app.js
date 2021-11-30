@@ -11,10 +11,6 @@ app.get("/", function(req, res){
   res.render("about");
 });
 
-app.get("/gallery", function(req, res){
-  res.render("gallery");
-});
-
 app.get("/conferencehall", function(req, res){
   res.render("conferenceHall");
 });
@@ -28,7 +24,7 @@ app.get("/chat", function(req, res){
 });
 
 app.get("/information", function(req, res){
-  res.render("about");
+  res.render("infoCenter");
 });
 
 

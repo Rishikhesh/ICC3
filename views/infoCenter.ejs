@@ -2,11 +2,16 @@
 <body>
 <%- include("navbar") -%>
 
-  <div class="flex items-center" style="max-width:100%;height:100%;overflow: hidden;">
-    <img src="Help-Desk.png" width="100%"  usemap="#infoCenter">
+  <div class="">
+    <img src="Help-Desk.png" style="height: 100vh;width:100%;"  usemap="#infoCenter">
 
     <map name="infoCenter">
-      <area shape="rect" coords="1137,281,1320,541" data-toggle="modal" data-target="#sidebar-Agenda" class="pull-left" alt="" style="cursor:pointer">
+      <area shape="rect" coords="1144,700, 1230,911" data-toggle="modal" data-target="#sidebar-Agenda"
+            class="pull-left" alt="" style="cursor:pointer">
+      <area shape="poly" coords="848,343, 880,377, 1058,357, 1064,375" href="/conferencehall" style="cursor:pointer">
+      <area shape="rect" coords="574,319, 874,349, 744,340, 744,367" data-toggle="modal" data-target="#sidebar-speakers"
+            class="pull-left" alt="" style="cursor:pointer" >
+      <area shape="poly" coords="1122,351, 1128,379, 1338,350, 1326,317" href="/eventSponsor" style="cursor:pointer">
     </map>
   </div>
 

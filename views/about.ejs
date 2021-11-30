@@ -2,33 +2,24 @@
 <body>
 <%- include("navbar") -%>
 
-  <div class="flex items-center" style="max-width:100%;height:100%;overflow: hidden;">
-    <img src="Lobby.png" width="100%">
-    <!-- <div id="videoModal" class="vmodal">
-        <div class="modal-content">
-          <div class="flex justify-center pt-2">
-            <h1 class="text-4xl">Welcome to ICC3</h1>
-          </div>
-          <div class="modal-video">
-            <iframe src="" frameborder="0"></iframe>
-          </div>
-          <div  class="flex justify-center">
-            <button class="w-36 py-1 rounded-xl bg-indigo-200" id="proceed-btn">Proceed</button>
-          </div>
-        </div> -->
+  <div >
+    <img src="Lobby.png" style="height: 100vh;width:100%;" usemap="#lobby-map">
 
-        <!-- Button trigger modal -->
+    <map name="lobby-map">
+         <area shape="rect" coords="1468,355, 1690,880" data-toggle="modal" data-target="#sidebar-Agenda"
+               class="pull-left" alt="" style="cursor:pointer">
+    </map>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="min-height: auto;">
       <div class="modal-header">
         <div class="flex justify-center">
           <h1 class="modal-title text-3xl font-medium" id="exampleModalLongTitle">Welcome to ICC3</h1>
         </div>
-    
-      <div class="modal-body" style="min-height: 500px;"> 
+
+      <div class="modal-body" style="min-height: 500px;">
         <video class="min-w-full" height="500px" autoplay muted>
           <source src="/psg_video.mp4" type="video/mp4">
       </video>
@@ -43,21 +34,9 @@
     </div>
   </div>
 
-  <!-- <script>
-    var modal = document.getElementById("videoModal");
-    var btn = document.getElementById("proceed-btn");
-    btn.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-    </script> -->
     <script>
       $(document).ready(function(){
-        $("#exampleModalCenter").modal('show');
+        $("#videoModal").modal('show');
       });
     </script>
 </body>
