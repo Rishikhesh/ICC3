@@ -6,14 +6,30 @@
     <img src="Help-Desk.png" style="height: 100vh;width:100%;"  usemap="#infoCenter">
 
     <map name="infoCenter">
-      <area shape="rect" coords="1144,700, 1230,911" data-toggle="modal" data-target="#sidebar-Agenda"
-            class="pull-left" alt="" style="cursor:pointer">
-      <area shape="poly" coords="848,343, 880,377, 1058,357, 1064,375" href="/conferencehall" style="cursor:pointer">
-      <area shape="rect" coords="574,319, 874,349, 744,340, 744,367" data-toggle="modal" data-target="#sidebar-speakers"
-            class="pull-left" alt="" style="cursor:pointer" >
-      <area shape="poly" coords="1122,351, 1128,379, 1338,350, 1326,317" href="/eventSponsor" style="cursor:pointer">
+      <area alt="speakersList" title="speakersList" onclick="showSpeakerModal()" coords="375,186,375,312,555,320,554,205" shape="poly" style="cursor: pointer;">
+      <area alt="conferenceHall" title="conferenceHall" href="/conferencehall" coords="593,210,758,323" shape="rect">
+      <area alt="eventSponsers" title="eventSponsers" href="/eventSponsor" coords="788,208,791,318,959,320,956,186" shape="poly">
+      <area alt="programSchedule" title="programSchedule" onclick="showAgendaModal()" coords="803,433,869,551" shape="rect" style="cursor: pointer;">
+      <!-- <area alt="informationCenter" title="informationCenter" href="/" coords="590,425,755,540" shape="rect"> -->
     </map>
   </div>
+
+  <script>
+
+    const showSpeakerModal = () => {
+      $("#sidebar-speakers").modal("show")
+    }
+
+    const showAgendaModal = () => {
+      $("#sidebar-Agenda").modal("show")
+    }
+
+    // Dynamic image maps
+    $(document).ready(() => {
+        $('img[usemap]').rwdImageMaps()
+    })
+
+  </script>
 
 </body>
 </html>

@@ -1,43 +1,63 @@
 <%- include("header") -%>
 <body>
 <%- include("navbar") -%>
-
-  <div >
-    <img src="Lobby.png" style="height: 100vh;width:100%;" usemap="#lobby-map">
-
-    <map name="lobby-map">
-         <area shape="rect" coords="1468,355, 1690,880" data-toggle="modal" data-target="#sidebar-Agenda"
-               class="pull-left" alt="" style="cursor:pointer">
+  <div>
+    <img src="Lobby.png" style="height: 100vh;width:100vw;" usemap="#lobbyMap" />
+    
+    <map name="lobbyMap">
+      <area alt="informationCenter" title="informationCenter" coords="868,519,524,229" shape="rect"
+        onclick="showVideoModel()" style="cursor: pointer;">
+      <area alt="schedule" title="schedule" coords="1027,242,1192,536" shape="rect" 
+        onclick="showAgendaModal()" style="cursor: pointer;">
     </map>
 
-<!-- Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="min-height: auto;">
-      <div class="modal-header">
-        <div class="flex justify-center">
-          <h1 class="modal-title text-3xl font-medium" id="exampleModalLongTitle">Welcome to ICC3</h1>
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="min-height: auto;">
+          <div class="modal-header">
+            <div class="flex justify-center">
+              <h1 class="modal-title text-3xl font-medium" id="exampleModalLongTitle">Welcome to ICC3</h1>
+            </div>
+
+            <div class="modal-body" style="min-height: 500px;">
+              <video class="min-w-full" height="500px" autoplay muted>
+                <source src="/psg_video.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="flex justify-center modal-footer">
+              <button type="button"
+                class="btn bg-indigo-200 hover:bg-white hover:text-black hover:border-solid hover:border-black"
+                data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-
-      <div class="modal-body" style="min-height: 500px;">
-        <video class="min-w-full" height="500px" autoplay muted>
-          <source src="/psg_video.mp4" type="video/mp4">
-      </video>
-      </div>
-
-      <div class="flex justify-center modal-footer">
-        <button type="button" class="btn bg-indigo-200 hover:bg-white hover:text-black hover:border-solid hover:border-black" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
-    </div>
-  </div>
 
-    <script>
-      $(document).ready(function(){
-        $("#videoModal").modal('show');
-      });
-    </script>
+  <script>
+    
+    const showVideoModel = () => {
+      $("#videoModal").modal("show")
+      $('video').get(0).load()
+      $('video').get(0).play()
+    }
+
+    const showAgendaModal = () => {
+      $("#sidebar-Agenda").modal("show")
+    }
+
+    $(document).ready(showVideoModel)
+
+    // Dynamic image maps
+    $(document).ready(() => {
+        $('img[usemap]').rwdImageMaps()
+    })
+
+  </script>
+
 </body>
 </html>
